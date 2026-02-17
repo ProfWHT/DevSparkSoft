@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { NAV_LINKS, COMPANY_INFO } from '../constants';
-import { MenuIcon, XIcon, WhatsAppIcon, FacebookIcon } from './icons/Icons';
+import { MenuIcon, XIcon, WhatsAppIcon, FacebookIcon, RocketIcon } from './icons/Icons';
 import Logo from './Logo';
 
 const Header: React.FC = () => {
@@ -23,44 +23,51 @@ const Header: React.FC = () => {
   }, [location]);
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-brand-dark/80 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-brand-dark/90 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
             <Logo />
           </div>
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-lg font-medium transition-colors duration-300 ${location.pathname === link.path ? 'text-brand-orange' : 'text-brand-light hover:text-brand-orange'}`}
+                className={`text-base font-medium transition-colors duration-300 ${location.pathname === link.path ? 'text-brand-orange' : 'text-brand-light hover:text-brand-orange'}`}
               >
                 {link.name}
               </Link>
             ))}
           </nav>
-          <div className="hidden md:flex items-center gap-4">
-             <a
+          <div className="hidden lg:flex items-center gap-3">
+             <Link
+                to="/google-play-console"
+                className="inline-flex items-center px-4 py-2 text-sm font-bold text-white bg-gradient-to-r from-orange-500 to-red-600 rounded-md hover:scale-105 transition-all duration-300 shadow-md shadow-orange-500/20"
+              >
+                <RocketIcon className="h-4 w-4 mr-2" />
+                Sell Account
+            </Link>
+            <a
                 href={COMPANY_INFO.facebookGroup}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 text-base font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-all duration-300"
+                className="inline-flex items-center px-3 py-2 text-sm font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-all duration-300"
               >
-                <FacebookIcon className="h-5 w-5 mr-2" />
-                Facebook Group
+                <FacebookIcon className="h-4 w-4 mr-1" />
+                FB Group
             </a>
             <a
                 href={COMPANY_INFO.whatsappCommunity}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 text-base font-semibold text-white bg-green-500 rounded-md hover:bg-green-600 transition-all duration-300"
+                className="inline-flex items-center px-3 py-2 text-sm font-semibold text-white bg-green-500 rounded-md hover:bg-green-600 transition-all duration-300"
               >
-                <WhatsAppIcon className="h-5 w-5 mr-2" />
-                Join Community
+                <WhatsAppIcon className="h-4 w-4 mr-1" />
+                Community
             </a>
           </div>
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-brand-light hover:text-white focus:outline-none"
@@ -73,7 +80,7 @@ const Header: React.FC = () => {
       </div>
       
       {/* Mobile Menu */}
-      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} transition-all duration-500 ease-in-out`}>
+      <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'} transition-all duration-500 ease-in-out`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-brand-dark/95 backdrop-blur-sm animate-slide-in">
           {NAV_LINKS.map((link) => (
             <Link
@@ -85,11 +92,18 @@ const Header: React.FC = () => {
             </Link>
           ))}
           <div className="pt-4 px-3 space-y-3">
+             <Link
+                to="/google-play-console"
+                className="w-full flex items-center justify-center px-6 py-3 text-lg font-bold text-white bg-gradient-to-r from-orange-500 to-red-600 rounded-md"
+              >
+                <RocketIcon className="h-5 w-5 mr-2" />
+                Sell Your Google Play Account
+            </Link>
              <a
                 href={COMPANY_INFO.facebookGroup}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-all duration-300"
+                className="w-full flex items-center justify-center px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-md"
               >
                 <FacebookIcon className="h-5 w-5 mr-2" />
                 Join Facebook Group
@@ -98,7 +112,7 @@ const Header: React.FC = () => {
                 href={COMPANY_INFO.whatsappCommunity}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center px-6 py-3 text-lg font-semibold text-white bg-green-500 rounded-md hover:bg-green-600 transition-all duration-300"
+                className="w-full flex items-center justify-center px-6 py-3 text-lg font-semibold text-white bg-green-500 rounded-md"
               >
                 <WhatsAppIcon className="h-5 w-5 mr-2" />
                 Join Community

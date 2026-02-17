@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
@@ -12,6 +11,7 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 import AdminPanelPage from './pages/AdminPanelPage';
 import ProductsPage from './pages/ProductsPage';
+import GooglePlayConsolePage from './pages/GooglePlayConsolePage';
 
 const App: React.FC = () => {
   return (
@@ -26,6 +26,7 @@ const App: React.FC = () => {
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/google-play-console" element={<GooglePlayConsolePage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route path="/terms-and-conditions" element={<TermsPage />} />
             <Route path="/admin" element={<AdminPanelPage />} />

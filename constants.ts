@@ -5,7 +5,7 @@ export const COMPANY_INFO = {
   name: "DevSpark Soft IT",
   license: "DNCC/037306",
   helpline: "+8809649999144",
-  whatsapp: "+801862109990",
+  whatsapp: "+8801862109990",
   email: "info@DevSparkSoft.com",
   address: "Sector 16, Jolsiri Abason, Purbachal, Dhaka",
   domain: "https://DevSparksoft.com",
@@ -18,6 +18,7 @@ export const NAV_LINKS: NavLink[] = [
   { name: "About Us", path: "/about" },
   { name: "Services", path: "/services" },
   { name: "Products", path: "/products" },
+  { name: "Google Play Console", path: "/google-play-console" },
   { name: "Our Team", path: "/team" },
   { name: "Contact", path: "/contact" },
 ];
@@ -83,7 +84,7 @@ export const SERVICES: Service[] = [
     features: [
       "Search Engine Optimization (SEO)",
       "Social Media Marketing (SMM)",
-      "Pay-Per-Click (PPC) Advertising",
+      "Pay-Pre-Click (PPC) Advertising",
       "Content Marketing & Strategy"
     ],
     image: "https://i.ibb.co/6JHdv5CB/IMG-7275.jpg"

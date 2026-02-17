@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { COMPANY_INFO, NAV_LINKS } from '../constants';
-import { PhoneIcon, MailIcon, LocationMarkerIcon, WhatsAppIcon, FacebookIcon, TwitterIcon, LinkedInIcon } from './icons/Icons';
+import { PhoneIcon, MailIcon, LocationMarkerIcon, WhatsAppIcon, FacebookIcon } from './icons/Icons';
 import Logo from './Logo';
 
 const Footer: React.FC = () => {
   const socialLinks = [
-    { icon: FacebookIcon, href: "#" },
-    { icon: TwitterIcon, href: "#" },
-    { icon: LinkedInIcon, href: "#" },
+    { icon: FacebookIcon, href: "https://www.facebook.com/devsparksoft" },
   ];
 
   return (
@@ -73,7 +71,13 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold text-brand-light mb-4">Follow Us</h4>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
-                <a key={index} href={social.href} className="text-brand-slate hover:text-brand-orange p-2 bg-gray-800 rounded-full transition-colors duration-300">
+                <a 
+                  key={index} 
+                  href={social.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-brand-slate hover:text-brand-orange p-2 bg-gray-800 rounded-full transition-colors duration-300"
+                >
                   <social.icon className="h-6 w-6" />
                 </a>
               ))}
