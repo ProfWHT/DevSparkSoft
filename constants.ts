@@ -146,8 +146,8 @@ export const OUR_PROCESS: ProcessStep[] = [
 ];
 
 export const STATS: Stat[] = [
-    { value: "19K+", label: "Projects Completed" },
-    { value: "1199+", label: "Happy Clients" },
+    { value: "1199+", label: "Projects Completed" },
+    { value: "19500+", label: "Happy Clients" },
     { value: "500+", label: "Years of Experience" }
 ];
 
