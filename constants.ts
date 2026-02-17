@@ -5,7 +5,7 @@ export const COMPANY_INFO = {
   name: "DevSpark Soft IT",
   license: "DNCC/037306",
   helpline: "+8809649999144",
-  whatsapp: "+8801862109990",
+  whatsapp: "+801862109990",
   email: "info@DevSparkSoft.com",
   address: "Sector 16, Jolsiri Abason, Purbachal, Dhaka",
   domain: "https://DevSparksoft.com",
@@ -148,7 +148,7 @@ export const OUR_PROCESS: ProcessStep[] = [
 export const STATS: Stat[] = [
     { value: "1199+", label: "Projects Completed" },
     { value: "19500+", label: "Happy Clients" },
-    { value: "500+", label: "Years of Experience" }
+    { value: "5+", label: "Years of Experience" }
 ];
 
 export const PRODUCTS: Product[] = [
