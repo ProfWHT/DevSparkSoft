@@ -1,0 +1,113 @@
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { NAV_LINKS, COMPANY_INFO } from '../constants';
+import { MenuIcon, XIcon, WhatsAppIcon, FacebookIcon } from './icons/Icons';
+import Logo from './Logo';
+
+const Header: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
+  useEffect(() => {
+    setIsOpen(false);
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return (
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-brand-dark/80 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          <div className="flex-shrink-0">
+            <Logo />
+          </div>
+          <nav className="hidden md:flex items-center space-x-8">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={`text-lg font-medium transition-colors duration-300 ${location.pathname === link.path ? 'text-brand-orange' : 'text-brand-light hover:text-brand-orange'}`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+          <div className="hidden md:flex items-center gap-4">
+             <a
+                href={COMPANY_INFO.facebookGroup}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 text-base font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-all duration-300"
+              >
+                <FacebookIcon className="h-5 w-5 mr-2" />
+                Facebook Group
+            </a>
+            <a
+                href={COMPANY_INFO.whatsappCommunity}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 text-base font-semibold text-white bg-green-500 rounded-md hover:bg-green-600 transition-all duration-300"
+              >
+                <WhatsAppIcon className="h-5 w-5 mr-2" />
+                Join Community
+            </a>
+          </div>
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-brand-light hover:text-white focus:outline-none"
+            >
+              <span className="sr-only">Open main menu</span>
+              {isOpen ? <XIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      {/* Mobile Menu */}
+      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} transition-all duration-500 ease-in-out`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-brand-dark/95 backdrop-blur-sm animate-slide-in">
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${location.pathname === link.path ? 'text-brand-orange bg-gray-800' : 'text-brand-light hover:text-white hover:bg-gray-700'}`}
+            >
+              {link.name}
+            </Link>
+          ))}
+          <div className="pt-4 px-3 space-y-3">
+             <a
+                href={COMPANY_INFO.facebookGroup}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-all duration-300"
+              >
+                <FacebookIcon className="h-5 w-5 mr-2" />
+                Join Facebook Group
+            </a>
+            <a
+                href={COMPANY_INFO.whatsappCommunity}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center px-6 py-3 text-lg font-semibold text-white bg-green-500 rounded-md hover:bg-green-600 transition-all duration-300"
+              >
+                <WhatsAppIcon className="h-5 w-5 mr-2" />
+                Join Community
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
