@@ -4,6 +4,7 @@ import { COMPANY_INFO, SERVICES, WHY_CHOOSE_US_POINTS, TEAM_MEMBERS, OUR_PROCESS
 import type { Service, TeamMember, ProcessStep, Stat } from '../types';
 import { CheckCircleIcon, ArrowRightIcon, PhoneIcon, WhatsAppIcon, AcademicCapIcon, BriefcaseIcon, LocationMarkerIcon, FacebookIcon } from '../components/icons/Icons';
 import Image from '../components/Image';
+import CountdownTimer from '../components/CountdownTimer';
 
 
 // Helper component for section titles
@@ -60,6 +61,27 @@ const HeroSection: React.FC = () => (
           <span>License No: {COMPANY_INFO.license}</span>
         </div>
       </div>
+    </div>
+  </section>
+);
+
+// Countdown Section
+const CountdownSection: React.FC = () => (
+  <section className="py-20 bg-gray-900/50 overflow-hidden">
+     <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+        {/* Decorative Blurs */}
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-brand-blue/20 rounded-full filter blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-brand-cyan/20 rounded-full filter blur-3xl opacity-50 translate-x-1/2 -translate-y-1/2"></div>
+        
+        <div className="relative z-10 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-light mb-4">
+                Our Physical Office Grand Opening
+            </h2>
+            <p className="max-w-2xl mx-auto text-brand-slate mb-8">
+                We are currently operating virtually to serve our clients. We are thrilled to announce the grand opening of our physical office. Mark your calendars for this momentous occasion!
+            </p>
+            <CountdownTimer targetDate="2026-03-17T00:00:00" />
+        </div>
     </div>
   </section>
 );
@@ -298,6 +320,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <HeroSection />
+      <CountdownSection />
       <AboutSection />
       <ServicesSection />
       <WhyChooseUsSection />

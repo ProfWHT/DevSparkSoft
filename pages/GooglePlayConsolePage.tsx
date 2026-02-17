@@ -29,9 +29,10 @@ const GooglePlayConsolePage: React.FC = () => {
               Google Play Developer Account
             </span> ✅
           </h1>
-          <p className="max-w-2xl mx-auto text-xl text-brand-light font-medium mb-10">
+          <p className="max-w-2xl mx-auto text-xl text-brand-light font-medium mb-4">
             Get the best market price for your vintage developer accounts. Secure, fast, and 100% confidential.
           </p>
+          <p className="text-brand-slate text-sm mb-10">Buying campaign started: March 17th</p>
         </div>
       </section>
 
