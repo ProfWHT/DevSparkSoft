@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { RocketIcon, UsersIcon, ImageIcon, EditIcon, DatabaseIcon, BriefcaseIcon } from '../components/icons/Icons';
+import { RocketIcon, UsersIcon, ImageIcon, EditIcon, DatabaseIcon } from '../components/icons/Icons';
 
 const AdminDashboardPage: React.FC = () => {
   return (
@@ -9,30 +9,6 @@ const AdminDashboardPage: React.FC = () => {
       <p className="text-brand-slate mb-8">Welcome! Manage your website content and settings from here.</p>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <Link 
-          to="/admin/portfolio"
-          className="block p-8 bg-gray-800/50 rounded-lg hover:bg-gray-800 transition-colors group"
-        >
-          <BriefcaseIcon className="h-10 w-10 text-yellow-400 mb-4" />
-          <h2 className="text-2xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">
-            Portfolio Management
-          </h2>
-          <p className="text-brand-slate">
-            Add, edit, and manage all the projects showcased in your portfolio.
-          </p>
-        </Link>
-        <Link 
-          to="/admin/portfolio-seeder"
-          className="block p-8 bg-gray-800/50 rounded-lg hover:bg-gray-800 transition-colors group"
-        >
-          <DatabaseIcon className="h-10 w-10 text-teal-400 mb-4" />
-          <h2 className="text-2xl font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">
-            Portfolio Seeder
-          </h2>
-          <p className="text-brand-slate">
-            Bulk-generate thousands of portfolio projects with unique content and AI images.
-          </p>
-        </Link>
         <Link 
           to="/admin/blog-generator"
           className="block p-8 bg-gray-800/50 rounded-lg hover:bg-gray-800 transition-colors group"

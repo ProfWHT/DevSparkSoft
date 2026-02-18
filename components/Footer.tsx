@@ -3,10 +3,8 @@ import { Link } from 'react-router-dom';
 import { COMPANY_INFO, NAV_LINKS } from '../constants';
 import { PhoneIcon, MailIcon, LocationMarkerIcon, WhatsAppIcon, FacebookIcon } from './icons/Icons';
 import Logo from './Logo';
-import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer: React.FC = () => {
-  const { language } = useLanguage();
   const socialLinks = [
     { icon: FacebookIcon, href: "https://www.facebook.com/devsparksoft" },
   ];
@@ -33,9 +31,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               {NAV_LINKS.map(link => (
                 <li key={link.name}>
-                  <Link to={link.path} className="text-brand-slate hover:text-brand-orange transition-colors duration-300">
-                     {language === 'bn' ? link.labelBn : link.labelEn}
-                  </Link>
+                  <Link to={link.path} className="text-brand-slate hover:text-brand-orange transition-colors duration-300">{link.name}</Link>
                 </li>
               ))}
                <li>

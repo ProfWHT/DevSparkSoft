@@ -34,8 +34,6 @@ export interface Stat {
 export interface NavLink {
     name: string;
     path: string;
-    labelBn: string;
-    labelEn: string;
 }
 
 export interface Product {
@@ -78,26 +76,3 @@ export interface BlogPost {
   tags: string[];
   coverImage: string;
 }
-
-export interface PortfolioProject {
-  id: string;
-  slug: string;
-  titleBn: string;
-  titleEn: string;
-  summaryBn: string;
-  summaryEn: string;
-  descriptionBn: string; // Markdown supported
-  descriptionEn: string; // Markdown supported
-  year: number;
-  category: string;
-  techStack: string[];
-  clientName?: string;
-  liveUrl?: string;
-  thumbnailUrl: string;
-  galleryImages: string[];
-  isFeatured: boolean;
-  status: 'Published' | 'Draft';
-  createdAt: string; // ISO Date string
-}
-
-export type Language = 'en' | 'bn';

@@ -4,12 +4,9 @@ import type { NavLink } from '../types';
 import { NAV_LINKS, COMPANY_INFO } from '../constants';
 import { MenuIcon, XIcon, WhatsAppIcon, FacebookIcon, RocketIcon } from './icons/Icons';
 import Logo from './Logo';
-import { useLanguage } from '../contexts/LanguageContext';
-import LanguageToggle from './LanguageToggle';
 
 const NavLinkItem: React.FC<{ link: NavLink, className?: string }> = ({ link, className }) => {
   const location = useLocation();
-  const { language } = useLanguage();
   const isActive = link.path === '/'
     ? location.pathname === link.path
     : location.pathname.startsWith(link.path);
@@ -20,7 +17,7 @@ const NavLinkItem: React.FC<{ link: NavLink, className?: string }> = ({ link, cl
       className={`${className} ${isActive ? 'text-brand-orange' : 'text-brand-light hover:text-brand-orange'}`}
       aria-current={isActive ? 'page' : undefined}
     >
-      {language === 'bn' ? link.labelBn : link.labelEn}
+      {link.name}
     </Link>
   );
 };
@@ -82,10 +79,8 @@ const Header: React.FC = () => {
                 <WhatsAppIcon className="h-4 w-4 mr-1" />
                 Community
             </a>
-            <LanguageToggle />
           </div>
-          <div className="lg:hidden flex items-center gap-2">
-            <LanguageToggle />
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-brand-light hover:text-white focus:outline-none"
