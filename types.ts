@@ -42,3 +42,37 @@ export interface Product {
   category: string;
   description: string;
 }
+
+export interface Author {
+  name: string;
+  avatar: string;
+  role: string;
+  bio: string;
+}
+
+export interface BlogPost {
+  id: string;
+  author: Author;
+  titleBn: string;
+  titleEn: string;
+  slug: string;
+  excerptBn: string;
+  excerptEn: string;
+  contentBn: string;
+  contentEn: string;
+  faqBn: {q:string, a:string}[];
+  faqEn: {q:string, a:string}[];
+  seo: {
+    metaTitleBn:string;
+    metaTitleEn:string;
+    metaDescBn:string;
+    metaDescEn:string;
+  };
+  imageKeywords: string[];
+  coverAltBn:string;
+  coverAltEn:string;
+  publishedDate: string;
+  category: string;
+  tags: string[];
+  coverImage: string;
+}

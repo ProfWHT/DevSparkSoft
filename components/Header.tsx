@@ -1,8 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import type { NavLink } from '../types';
 import { NAV_LINKS, COMPANY_INFO } from '../constants';
 import { MenuIcon, XIcon, WhatsAppIcon, FacebookIcon, RocketIcon } from './icons/Icons';
 import Logo from './Logo';
+
+const NavLinkItem: React.FC<{ link: NavLink, className?: string }> = ({ link, className }) => {
+  const location = useLocation();
+  const isActive = link.path === '/'
+    ? location.pathname === link.path
+    : location.pathname.startsWith(link.path);
+
+  return (
+    <Link
+      to={link.path}
+      className={`${className} ${isActive ? 'text-brand-orange' : 'text-brand-light hover:text-brand-orange'}`}
+      aria-current={isActive ? 'page' : undefined}
+    >
+      {link.name}
+    </Link>
+  );
+};
+
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,13 +50,7 @@ const Header: React.FC = () => {
           </div>
           <nav className="hidden lg:flex items-center space-x-6">
             {NAV_LINKS.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={`text-base font-medium transition-colors duration-300 ${location.pathname === link.path ? 'text-brand-orange' : 'text-brand-light hover:text-brand-orange'}`}
-              >
-                {link.name}
-              </Link>
+              <NavLinkItem key={link.name} link={link} className="text-base font-medium transition-colors duration-300" />
             ))}
           </nav>
           <div className="hidden lg:flex items-center gap-3">
@@ -83,13 +96,11 @@ const Header: React.FC = () => {
       <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'} transition-all duration-500 ease-in-out`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-brand-dark/95 backdrop-blur-sm animate-slide-in">
           {NAV_LINKS.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${location.pathname === link.path ? 'text-brand-orange bg-gray-800' : 'text-brand-light hover:text-white hover:bg-gray-700'}`}
-            >
-              {link.name}
-            </Link>
+            <NavLinkItem 
+              key={link.name} 
+              link={link}
+              className="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300"
+             />
           ))}
           <div className="pt-4 px-3 space-y-3">
              <Link
