@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
@@ -11,13 +11,17 @@ const DEFAULT_PLACEHOLDER = 'https://via.placeholder.com/400x500?text=Image+Not+
 const Image: React.FC<ImageProps> = ({ src, alt, className, ...props }) => {
   const [imgSrc, setImgSrc] = useState(src);
 
+  useEffect(() => {
+    setImgSrc(src);
+  }, [src]);
+
   const handleError = () => {
     setImgSrc(DEFAULT_PLACEHOLDER);
   };
 
   return (
     <img
-      src={imgSrc}
+      src={imgSrc || DEFAULT_PLACEHOLDER}
       alt={alt}
       className={className}
       onError={handleError}

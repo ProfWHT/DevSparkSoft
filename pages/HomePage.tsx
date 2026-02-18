@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { COMPANY_INFO, SERVICES, WHY_CHOOSE_US_POINTS, TEAM_MEMBERS, OUR_PROCESS, STATS } from '../constants';
-import type { Service, TeamMember, ProcessStep, Stat } from '../types';
+import { PORTFOLIO_PROJECTS } from '../data/portfolio';
+import type { Service, TeamMember, ProcessStep, Stat, PortfolioProject } from '../types';
 import { CheckCircleIcon, ArrowRightIcon, PhoneIcon, WhatsAppIcon, AcademicCapIcon, BriefcaseIcon, LocationMarkerIcon, FacebookIcon } from '../components/icons/Icons';
 import Image from '../components/Image';
 import CountdownTimer from '../components/CountdownTimer';
+import { useLanguage } from '../contexts/LanguageContext';
 
 
 // Helper component for section titles
@@ -139,9 +141,79 @@ const ServicesSection: React.FC = () => (
   </section>
 );
 
+// Projects Section
+const ProjectCard: React.FC<{ project: PortfolioProject }> = ({ project }) => {
+  const { language } = useLanguage();
+  return (
+    <div className="bg-gray-800/50 rounded-lg overflow-hidden group transition-all duration-300 ease-in-out shadow-md hover:shadow-lg hover:shadow-brand-blue/20 hover:-translate-y-2 flex flex-col">
+      <Link to={`/portfolio/${project.slug}`} className="block aspect-video overflow-hidden relative">
+        <Image 
+          src={project.thumbnailUrl} 
+          alt={language === 'bn' ? project.titleBn : project.titleEn} 
+          className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+        />
+        <div className="absolute top-2 right-2 bg-brand-orange text-white text-xs font-bold px-2 py-1 rounded-md">{project.year}</div>
+      </Link>
+      <div className="p-4 flex flex-col flex-grow">
+        <span className="text-xs font-semibold uppercase tracking-wider text-brand-blue mb-1">{project.category}</span>
+        <h3 className="text-lg font-bold text-brand-light mb-2 flex-grow">{language === 'bn' ? project.titleBn : project.titleEn}</h3>
+        <p className="text-sm text-brand-slate mb-4 line-clamp-2">{language === 'bn' ? project.summaryBn : project.summaryEn}</p>
+        <div className="mt-auto pt-2">
+            <Link to={`/portfolio/${project.slug}`} className="text-sm font-semibold text-brand-blue hover:text-brand-orange flex items-center">
+                {language === 'bn' ? 'বিস্তারিত দেখুন' : 'View Details'} <ArrowRightIcon className="h-4 w-4 ml-1" />
+            </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
+const ProjectsSection: React.FC = () => {
+  const { language } = useLanguage();
+  const featuredProjects = PORTFOLIO_PROJECTS
+    .filter(p => p.isFeatured && p.status === 'Published')
+    .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+    .slice(0, 6);
+
+  return (
+    <section className="py-20 bg-brand-dark">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 animate-fade-in-up">
+          <span className="text-brand-blue font-semibold uppercase tracking-wider">
+            {language === 'bn' ? 'নির্বাচিত কাজসমূহ' : 'Selected Works'}
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-brand-light">
+            {language === 'bn' ? 'আমাদের সম্পন্ন প্রজেক্ট' : 'Our Completed Projects'}
+          </h2>
+           <p className="text-brand-slate mt-4 max-w-2xl mx-auto">
+            {language === 'bn' ? '২০১৮–২০২৬ সাল পর্যন্ত আমাদের নির্বাচিত কিছু কাজের ঝলক দেখুন।' : 'A glimpse into our selected works from 2018–2026.'}
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featuredProjects.map((project, index) => (
+            <div key={project.id} className="animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+              <ProjectCard project={project} />
+            </div>
+          ))}
+        </div>
+        <div className="mt-12 text-center">
+           <Link
+            to="/portfolio"
+            className="inline-flex items-center px-8 py-3 text-lg font-semibold text-white bg-brand-blue rounded-md hover:bg-opacity-80 transition-all duration-300"
+          >
+            {language === 'bn' ? 'সব প্রজেক্ট দেখুন' : 'View All Projects'} <ArrowRightIcon className="ml-2 h-5 w-5" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
 // Why Choose Us Section
 const WhyChooseUsSection: React.FC = () => (
-  <section className="py-20 bg-brand-dark">
+  <section className="py-20 bg-gray-900/50">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <SectionTitle subtitle="Why Choose Us" title="The DevSpark Advantage" />
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -323,6 +395,7 @@ const HomePage: React.FC = () => {
       <CountdownSection />
       <AboutSection />
       <ServicesSection />
+      <ProjectsSection />
       <WhyChooseUsSection />
       <TeamSection />
       <OurProcessSection />

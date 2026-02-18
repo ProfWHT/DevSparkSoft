@@ -20,6 +20,11 @@ import AdminBlogGeneratorPage from './pages/AdminBlogGeneratorPage';
 import AdminImageGeneratorPage from './pages/AdminImageGeneratorPage';
 import AboutCeoPage from './pages/AboutCeoPage';
 import AdminBlogEditorPage from './pages/AdminBlogEditorPage';
+import AdminBlogSeederPage from './pages/AdminBlogSeederPage';
+import PortfolioPage from './pages/PortfolioPage';
+import PortfolioDetailPage from './pages/PortfolioDetailPage';
+import AdminPortfolioPage from './pages/AdminPortfolioPage';
+import AdminPortfolioSeederPage from './pages/AdminPortfolioSeederPage';
 
 const App: React.FC = () => {
   return (
@@ -36,6 +41,8 @@ const App: React.FC = () => {
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/portfolio/:slug" element={<PortfolioDetailPage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/google-play-console" element={<GooglePlayConsolePage />} />
@@ -46,9 +53,12 @@ const App: React.FC = () => {
             <Route path="/admin" element={<AdminLayout />}>
               <Route index element={<AdminDashboardPage />} />
               <Route path="team" element={<AdminTeamPage />} />
+              <Route path="portfolio" element={<AdminPortfolioPage />} />
+              <Route path="portfolio-seeder" element={<AdminPortfolioSeederPage />} />
               <Route path="blog-generator" element={<AdminBlogGeneratorPage />} />
               <Route path="image-generator" element={<AdminImageGeneratorPage />} />
               <Route path="blog-editor" element={<AdminBlogEditorPage />} />
+              <Route path="blog-seeder" element={<AdminBlogSeederPage />} />
             </Route>
           </Routes>
         </main>

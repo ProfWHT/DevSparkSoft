@@ -5,9 +5,12 @@ import Logo from './Logo';
 const AdminLayout: React.FC = () => {
   const navLinks = [
     { name: 'Dashboard', path: '/admin' },
+    { name: 'Portfolio', path: '/admin/portfolio' },
+    { name: 'Portfolio Seeder', path: '/admin/portfolio-seeder' },
     { name: 'Blog Generator', path: '/admin/blog-generator' },
     { name: 'Image Generator', path: '/admin/image-generator' },
     { name: 'Blog Editor', path: '/admin/blog-editor' },
+    { name: 'Blog Seeder', path: '/admin/blog-seeder' },
     { name: 'Team Management', path: '/admin/team' },
   ];
 

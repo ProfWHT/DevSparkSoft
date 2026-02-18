@@ -14,13 +14,14 @@ export const COMPANY_INFO = {
 };
 
 export const NAV_LINKS: NavLink[] = [
-  { name: "Home", path: "/" },
-  { name: "About Us", path: "/about" },
-  { name: "Services", path: "/services" },
-  { name: "Products", path: "/products" },
-  { name: "Blog", path: "/blog" },
-  { name: "Our Team", path: "/team" },
-  { name: "Contact", path: "/contact" },
+  { name: "Home", path: "/", labelBn: "হোম", labelEn: "Home" },
+  { name: "About Us", path: "/about", labelBn: "আমাদের সম্পর্কে", labelEn: "About Us" },
+  { name: "Services", path: "/services", labelBn: "সেবাসমূহ", labelEn: "Services" },
+  { name: "Products", path: "/products", labelBn: "প্রোডাক্টস", labelEn: "Products" },
+  { name: "Blog", path: "/blog", labelBn: "ব্লগ", labelEn: "Blog" },
+  { name: "Portfolio", path: "/portfolio", labelBn: "পোর্টফোলিও", labelEn: "Portfolio" },
+  { name: "Our Team", path: "/team", labelBn: "আমাদের টিম", labelEn: "Our Team" },
+  { name: "Contact", path: "/contact", labelBn: "যোগাযোগ", labelEn: "Contact" },
 ];
 
 export const SERVICES: Service[] = [

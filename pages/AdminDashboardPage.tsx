@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { RocketIcon, UsersIcon, ImageIcon, EditIcon } from '../components/icons/Icons';
+import { RocketIcon, UsersIcon, ImageIcon, EditIcon, DatabaseIcon, BriefcaseIcon } from '../components/icons/Icons';
 
 const AdminDashboardPage: React.FC = () => {
   return (
@@ -10,6 +10,30 @@ const AdminDashboardPage: React.FC = () => {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <Link 
+          to="/admin/portfolio"
+          className="block p-8 bg-gray-800/50 rounded-lg hover:bg-gray-800 transition-colors group"
+        >
+          <BriefcaseIcon className="h-10 w-10 text-yellow-400 mb-4" />
+          <h2 className="text-2xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">
+            Portfolio Management
+          </h2>
+          <p className="text-brand-slate">
+            Add, edit, and manage all the projects showcased in your portfolio.
+          </p>
+        </Link>
+        <Link 
+          to="/admin/portfolio-seeder"
+          className="block p-8 bg-gray-800/50 rounded-lg hover:bg-gray-800 transition-colors group"
+        >
+          <DatabaseIcon className="h-10 w-10 text-teal-400 mb-4" />
+          <h2 className="text-2xl font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">
+            Portfolio Seeder
+          </h2>
+          <p className="text-brand-slate">
+            Bulk-generate thousands of portfolio projects with unique content and AI images.
+          </p>
+        </Link>
+        <Link 
           to="/admin/blog-generator"
           className="block p-8 bg-gray-800/50 rounded-lg hover:bg-gray-800 transition-colors group"
         >
@@ -18,7 +42,7 @@ const AdminDashboardPage: React.FC = () => {
             AI Blog Generator
           </h2>
           <p className="text-brand-slate">
-            Create high-quality, SEO-optimized blog posts automatically using the power of AI.
+            Create single, high-quality blog posts automatically using the power of AI.
           </p>
         </Link>
 
@@ -44,7 +68,20 @@ const AdminDashboardPage: React.FC = () => {
             Blog Editor
           </h2>
           <p className="text-brand-slate">
-            Edit existing blog posts. Note: The author field is locked as per policy.
+            Manually edit existing blog posts. Note: The author field is locked as per policy.
+          </p>
+        </Link>
+        
+        <Link 
+          to="/admin/blog-seeder"
+          className="block p-8 bg-gray-800/50 rounded-lg hover:bg-gray-800 transition-colors group"
+        >
+          <DatabaseIcon className="h-10 w-10 text-purple-400 mb-4" />
+          <h2 className="text-2xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+            AI Blog Seeder
+          </h2>
+          <p className="text-brand-slate">
+            Bulk-generate hundreds of unique blog posts and cover images with a single click.
           </p>
         </Link>
 
