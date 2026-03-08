@@ -38,6 +38,9 @@ const ImageUploader: React.FC = () => {
     accept: ACCEPTED_FORMATS,
     maxSize: MAX_SIZE_BYTES,
     multiple: false,
+    onDragEnter: () => {},
+    onDragOver: () => {},
+    onDragLeave: () => {},
   });
 
   const handleRemove = () => {

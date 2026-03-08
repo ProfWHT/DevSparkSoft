@@ -299,19 +299,30 @@ const CtaSection: React.FC = () => (
           <PhoneIcon className="mr-2 h-6 w-6" /> Call Helpline
         </a>
       </div>
-       <div className="mt-10 animate-fade-in-up">
-        <a
-          href={COMPANY_INFO.facebookGroup}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 text-brand-light hover:text-brand-orange transition-colors duration-300 group"
-        >
-          <FacebookIcon className="h-8 w-8 text-blue-500 group-hover:scale-110 transition-transform" />
-          <span className="font-semibold text-xl border-b-2 border-dashed border-gray-600 group-hover:border-brand-orange pb-1">
-            Join Our Facebook Group : meet market
-          </span>
-        </a>
-      </div>
+        <div className="mt-10 flex flex-col items-center gap-6 animate-fade-in-up">
+          <a
+            href={COMPANY_INFO.facebookGroup}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 text-brand-light hover:text-brand-orange transition-colors duration-300 group"
+          >
+            <FacebookIcon className="h-8 w-8 text-blue-500 group-hover:scale-110 transition-transform" />
+            <span className="font-semibold text-xl border-b-2 border-dashed border-gray-600 group-hover:border-brand-orange pb-1">
+              Join Our Facebook Group : meet market
+            </span>
+          </a>
+          <a
+            href={COMPANY_INFO.facebookPage}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 text-brand-light hover:text-brand-orange transition-colors duration-300 group"
+          >
+            <FacebookIcon className="h-8 w-8 text-blue-600 group-hover:scale-110 transition-transform" />
+            <span className="font-semibold text-xl border-b-2 border-dashed border-gray-600 group-hover:border-brand-orange pb-1">
+              Follow Our Facebook Page
+            </span>
+          </a>
+        </div>
     </div>
   </section>
 );

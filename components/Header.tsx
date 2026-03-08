@@ -62,6 +62,15 @@ const Header: React.FC = () => {
                 Sell Account
             </Link>
             <a
+                href={COMPANY_INFO.facebookPage}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-3 py-2 text-sm font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600 transition-all duration-300"
+              >
+                <FacebookIcon className="h-4 w-4 mr-1" />
+                FB Page
+            </a>
+            <a
                 href={COMPANY_INFO.facebookGroup}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -110,6 +119,15 @@ const Header: React.FC = () => {
                 <RocketIcon className="h-5 w-5 mr-2" />
                 Sell Your Google Play Account
             </Link>
+             <a
+                href={COMPANY_INFO.facebookPage}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center px-6 py-3 text-lg font-semibold text-white bg-blue-500 rounded-md"
+              >
+                <FacebookIcon className="h-5 w-5 mr-2" />
+                Follow Facebook Page
+            </a>
              <a
                 href={COMPANY_INFO.facebookGroup}
                 target="_blank"

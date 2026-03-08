@@ -6,7 +6,7 @@ import Logo from './Logo';
 
 const Footer: React.FC = () => {
   const socialLinks = [
-    { icon: FacebookIcon, href: "https://www.facebook.com/devsparksoft" },
+    { icon: FacebookIcon, href: COMPANY_INFO.facebookPage },
   ];
 
   return (
@@ -22,7 +22,14 @@ const Footer: React.FC = () => {
             <p className="text-brand-slate mb-4">
               Your trusted partner for innovative IT solutions and digital transformation in Bangladesh and beyond.
             </p>
-            <p className="text-brand-slate">License No: {COMPANY_INFO.license}</p>
+            <div className="mb-4 space-y-1">
+              <p className="text-brand-slate">License No: {COMPANY_INFO.license}</p>
+              <p className="text-brand-slate text-sm">
+                <a href={COMPANY_INFO.domain} target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange transition-colors">DevSparkSoft.com</a>
+                {" | "}
+                <a href={COMPANY_INFO.secondaryDomain} target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange transition-colors">DevSparkSoft.org</a>
+              </p>
+            </div>
           </div>
           
           {/* Quick Links */}

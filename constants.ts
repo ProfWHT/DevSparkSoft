@@ -8,9 +8,11 @@ export const COMPANY_INFO = {
   whatsapp: "+801862109990",
   email: "info@DevSparkSoft.com",
   address: "Sector 16, Jolsiri Abason, Purbachal, Dhaka",
-  domain: "https://DevSparksoft.com",
+  domain: "https://DevSparkSoft.com",
+  secondaryDomain: "https://DevSparkSoft.org",
   whatsappCommunity: "https://chat.whatsapp.com/DEpkuHHbmXHLYkTdh8sb4T",
-  facebookGroup: "https://www.facebook.com/share/g/17wFpzrWUv/?mibextid=wwXIfr"
+  facebookGroup: "https://www.facebook.com/share/g/17wFpzrWUv/?mibextid=wwXIfr",
+  facebookPage: "https://www.facebook.com/hashtag/devsparksoft/?"
 };
 
 export const NAV_LINKS: NavLink[] = [

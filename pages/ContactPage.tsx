@@ -68,9 +68,14 @@ const ContactPage: React.FC = () => {
                 <div className="flex items-start">
                   <PhoneIcon className="h-7 w-7 text-brand-blue mt-1 mr-4 flex-shrink-0" />
                   <div>
-                    <h3 className="text-lg font-semibold text-brand-light">Phone</h3>
+                    <h3 className="text-lg font-semibold text-brand-light">Phone & Web</h3>
                     <p className="text-brand-slate">Helpline: <a href={`tel:${COMPANY_INFO.helpline}`} className="hover:text-brand-blue transition-colors">{COMPANY_INFO.helpline}</a></p>
                     <p className="text-brand-slate">WhatsApp: <a href={`https://wa.me/${COMPANY_INFO.whatsapp.replace(/\+/g, '')}`} className="hover:text-brand-blue transition-colors">{COMPANY_INFO.whatsapp}</a></p>
+                    <div className="mt-2 flex gap-3 text-sm">
+                      <a href={COMPANY_INFO.domain} target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:underline">DevSparkSoft.com</a>
+                      <span className="text-gray-600">|</span>
+                      <a href={COMPANY_INFO.secondaryDomain} target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:underline">DevSparkSoft.org</a>
+                    </div>
                   </div>
                 </div>
               </div>
