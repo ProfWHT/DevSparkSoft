@@ -166,6 +166,7 @@ const badgeColorMap: { [key: string]: string } = {
   Manager: 'bg-blue-500 text-white',
   Partner: 'bg-purple-500 text-white',
   Investor: 'bg-yellow-500 text-gray-900',
+  Shareholder: 'bg-indigo-500 text-white',
 };
 
 const TeamMemberCard: React.FC<{ member: TeamMember }> = ({ member }) => (
