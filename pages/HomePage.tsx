@@ -35,10 +35,10 @@ const HeroSection: React.FC = () => (
     <div className="relative z-20 container mx-auto px-4 sm:px-6 animate-fade-in-up">
       <div className="bg-black/[.35] backdrop-blur-[6px] border border-white/[.12] rounded-[14px] p-7 md:p-10 max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6 [text-shadow:0_6px_18px_rgba(0,0,0,0.6)]">
-          Innovative IT Solutions, Software & <br className="hidden md:block" /> Digital Services
+          Innovative IT Solutions, Software & <br className="hidden md:block" /> Worldwide Digital Services
         </h1>
         <p className="max-w-3xl mx-auto text-lg md:text-xl text-brand-light mb-8 [text-shadow:0_6px_18px_rgba(0,0,0,0.6)]">
-          We are DevSpark Soft IT, a leading licensed agency in Bangladesh, dedicated to empowering businesses with cutting-edge technology and results-driven digital strategies.
+          We are DevSpark Soft IT, a leading licensed agency registered in both the <strong>USA (Alaska)</strong> and <strong>Bangladesh</strong>, dedicated to empowering businesses worldwide with cutting-edge technology and results-driven digital strategies.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
@@ -54,11 +54,26 @@ const HeroSection: React.FC = () => (
             Learn More
           </Link>
         </div>
-        <div className="mt-12 flex items-center justify-center gap-4 text-brand-slate">
-          <CheckCircleIcon className="h-6 w-6 text-green-400" />
-          <span>Govt. Licensed & Trusted</span>
-          <span>|</span>
-          <span>License No: {COMPANY_INFO.license}</span>
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-4 text-brand-slate">
+          <div className="flex items-center gap-2">
+            <CheckCircleIcon className="h-6 w-6 text-green-400" />
+            <span>Govt. Licensed & Trusted</span>
+          </div>
+          <span className="hidden md:inline">|</span>
+          <div className="flex items-center gap-2">
+            <span>BD License: {COMPANY_INFO.license}</span>
+          </div>
+          <span className="hidden md:inline">|</span>
+          <div className="flex items-center gap-2">
+            <a 
+              href={COMPANY_INFO.usaRegistrationLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-brand-orange transition-colors underline decoration-dashed underline-offset-4"
+            >
+              USA Reg: {COMPANY_INFO.usaRegistration}
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -96,9 +111,9 @@ const AboutSection: React.FC = () => (
         </div>
         <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <span className="text-brand-blue font-semibold uppercase tracking-wider">About DevSpark Soft IT</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-brand-light mb-4">Your Reliable Digital Partner in Bangladesh</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-brand-light mb-4">Your Reliable Digital Partner Worldwide</h2>
           <p className="text-brand-slate mb-6">
-            DevSpark Soft IT is a premier technology partner based in Dhaka, officially licensed (No: {COMPANY_INFO.license}) to provide comprehensive IT and digital services. With years of experience, we are committed to delivering reliable, innovative, and scalable solutions that drive growth and efficiency for our clients both locally and internationally.
+            DevSpark Soft IT is a premier technology partner, officially licensed in <strong>Bangladesh</strong> (No: {COMPANY_INFO.license}) and registered in the <strong>USA</strong> (Alaska Entity #10237739) to provide comprehensive IT and digital services globally. With years of experience, we are committed to delivering reliable, innovative, and scalable solutions that drive growth and efficiency for our clients both locally and internationally.
           </p>
           <p className="text-brand-slate mb-8">
             Our mission is to bridge the gap between business challenges and technological solutions, ensuring your success in the digital age.
@@ -299,30 +314,19 @@ const CtaSection: React.FC = () => (
           <PhoneIcon className="mr-2 h-6 w-6" /> Call Helpline
         </a>
       </div>
-        <div className="mt-10 flex flex-col items-center gap-6 animate-fade-in-up">
-          <a
-            href={COMPANY_INFO.facebookGroup}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-brand-light hover:text-brand-orange transition-colors duration-300 group"
-          >
-            <FacebookIcon className="h-8 w-8 text-blue-500 group-hover:scale-110 transition-transform" />
-            <span className="font-semibold text-xl border-b-2 border-dashed border-gray-600 group-hover:border-brand-orange pb-1">
-              Join Our Facebook Group : meet market
-            </span>
-          </a>
-          <a
-            href={COMPANY_INFO.facebookPage}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-brand-light hover:text-brand-orange transition-colors duration-300 group"
-          >
-            <FacebookIcon className="h-8 w-8 text-blue-600 group-hover:scale-110 transition-transform" />
-            <span className="font-semibold text-xl border-b-2 border-dashed border-gray-600 group-hover:border-brand-orange pb-1">
-              Follow Our Facebook Page
-            </span>
-          </a>
-        </div>
+       <div className="mt-10 animate-fade-in-up">
+        <a
+          href={COMPANY_INFO.facebookGroup}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 text-brand-light hover:text-brand-orange transition-colors duration-300 group"
+        >
+          <FacebookIcon className="h-8 w-8 text-blue-500 group-hover:scale-110 transition-transform" />
+          <span className="font-semibold text-xl border-b-2 border-dashed border-gray-600 group-hover:border-brand-orange pb-1">
+            Join Our Facebook Group : meet market
+          </span>
+        </a>
+      </div>
     </div>
   </section>
 );

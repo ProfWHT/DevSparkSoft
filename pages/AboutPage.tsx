@@ -21,7 +21,7 @@ const AboutPage: React.FC = () => {
             <div className="order-2 md:order-1">
               <h2 className="text-3xl md:text-4xl font-bold text-brand-light mb-4">Your Partner in Digital Excellence</h2>
               <p className="text-brand-slate mb-6">
-                Founded with the vision to revolutionize the digital landscape in Bangladesh, DevSpark Soft IT has grown into a trusted name for comprehensive IT services. We are a government-licensed entity (License No: {COMPANY_INFO.license}), which stands as a testament to our commitment to quality, transparency, and professional integrity.
+                Founded with the vision to revolutionize the digital landscape globally, DevSpark Soft IT has grown into a trusted name for comprehensive IT services. We are a dual-registered entity, officially licensed in <strong>Bangladesh</strong> (License No: {COMPANY_INFO.license}) and registered in the <strong>USA</strong> ({COMPANY_INFO.usaRegistration}), which stands as a testament to our commitment to quality, transparency, and professional integrity on a worldwide scale.
               </p>
               <p className="text-brand-slate mb-6">
                 Our team is our greatest asset. Comprising seasoned developers, creative designers, and strategic marketers, we work collaboratively to deliver solutions that are not just technologically advanced but also aligned with your core business objectives. We believe in building long-term partnerships with our clients, guiding them through every step of their digital journey.

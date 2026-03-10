@@ -4,15 +4,15 @@ import { WebDevIcon, SoftwareDevIcon, MobileAppIcon, UiUxIcon, DigitalMarketingI
 export const COMPANY_INFO = {
   name: "DevSpark Soft IT",
   license: "DNCC/037306",
+  usaRegistration: "Alaska Entity #10237739",
+  usaRegistrationLink: "https://www.alaskacompanydir.com/companies/dev-spark-soft-limited/",
   helpline: "+8809649999144",
   whatsapp: "+801862109990",
   email: "info@DevSparkSoft.com",
   address: "Sector 16, Jolsiri Abason, Purbachal, Dhaka",
-  domain: "https://DevSparkSoft.com",
-  secondaryDomain: "https://DevSparkSoft.org",
+  domain: "https://DevSparksoft.com",
   whatsappCommunity: "https://chat.whatsapp.com/DEpkuHHbmXHLYkTdh8sb4T",
-  facebookGroup: "https://www.facebook.com/share/g/17wFpzrWUv/?mibextid=wwXIfr",
-  facebookPage: "https://www.facebook.com/hashtag/devsparksoft/?"
+  facebookGroup: "https://www.facebook.com/share/g/17wFpzrWUv/?mibextid=wwXIfr"
 };
 
 export const NAV_LINKS: NavLink[] = [
