@@ -54,13 +54,6 @@ const Header: React.FC = () => {
             ))}
           </nav>
           <div className="hidden lg:flex items-center gap-3">
-             <Link
-                to="/google-play-console"
-                className="inline-flex items-center px-4 py-2 text-sm font-bold text-white bg-gradient-to-r from-orange-500 to-red-600 rounded-md hover:scale-105 transition-all duration-300 shadow-md shadow-orange-500/20"
-              >
-                <RocketIcon className="h-4 w-4 mr-2" />
-                Sell Account
-            </Link>
             <a
                 href={COMPANY_INFO.facebookPage}
                 target="_blank"
@@ -112,13 +105,6 @@ const Header: React.FC = () => {
              />
           ))}
           <div className="pt-4 px-3 space-y-3">
-             <Link
-                to="/google-play-console"
-                className="w-full flex items-center justify-center px-6 py-3 text-lg font-bold text-white bg-gradient-to-r from-orange-500 to-red-600 rounded-md"
-              >
-                <RocketIcon className="h-5 w-5 mr-2" />
-                Sell Your Google Play Account
-            </Link>
              <a
                 href={COMPANY_INFO.facebookPage}
                 target="_blank"

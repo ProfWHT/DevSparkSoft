@@ -10,7 +10,6 @@ import ContactPage from './pages/ContactPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 import ProductsPage from './pages/ProductsPage';
-import GooglePlayConsolePage from './pages/GooglePlayConsolePage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
 import AdminLayout from './components/AdminLayout';
@@ -39,7 +38,6 @@ const App: React.FC = () => {
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/google-play-console" element={<GooglePlayConsolePage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route path="/terms-and-conditions" element={<TermsPage />} />
             
