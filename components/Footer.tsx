@@ -71,6 +71,24 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
+          {/* Download App */}
+          <div>
+            <h4 className="text-lg font-semibold text-brand-light mb-4">Download App</h4>
+            <a 
+              href={COMPANY_INFO.googlePlayLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block hover:scale-105 transition-transform duration-300"
+            >
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+                alt="Get it on Google Play" 
+                className="h-12"
+                referrerPolicy="no-referrer"
+              />
+            </a>
+          </div>
+
           {/* Social Media */}
            <div>
             <h4 className="text-lg font-semibold text-brand-light mb-4">Follow Us</h4>

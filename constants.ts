@@ -14,7 +14,8 @@ export const COMPANY_INFO = {
   secondaryDomain: "https://DevSparkSoft.org",
   whatsappCommunity: "https://chat.whatsapp.com/DEpkuHHbmXHLYkTdh8sb4T",
   facebookGroup: "https://www.facebook.com/share/g/17wFpzrWUv/?mibextid=wwXIfr",
-  facebookPage: "https://www.facebook.com/devsparksoft"
+  facebookPage: "https://www.facebook.com/devsparksoft",
+  googlePlayLink: "https://play.google.com/store/apps/details?id=com.devsparksoft.wht"
 };
 
 export const NAV_LINKS: NavLink[] = [

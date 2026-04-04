@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { COMPANY_INFO, SERVICES, WHY_CHOOSE_US_POINTS, TEAM_MEMBERS, OUR_PROCESS, STATS } from '../constants';
 import type { Service, TeamMember, ProcessStep, Stat } from '../types';
-import { CheckCircleIcon, ArrowRightIcon, PhoneIcon, WhatsAppIcon, AcademicCapIcon, BriefcaseIcon, LocationMarkerIcon, FacebookIcon } from '../components/icons/Icons';
+import { CheckCircleIcon, ArrowRightIcon, PhoneIcon, WhatsAppIcon, AcademicCapIcon, BriefcaseIcon, LocationMarkerIcon, FacebookIcon, RocketIcon } from '../components/icons/Icons';
 import Image from '../components/Image';
 import CountdownTimer from '../components/CountdownTimer';
 
@@ -53,6 +53,14 @@ const HeroSection: React.FC = () => (
           >
             Learn More
           </Link>
+          <a
+            href={COMPANY_INFO.googlePlayLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto px-8 py-3 text-lg font-bold text-white bg-gradient-to-r from-green-500 to-emerald-600 rounded-md hover:scale-105 transition-transform duration-300 flex items-center justify-center"
+          >
+            <RocketIcon className="mr-2 h-5 w-5" /> Get App
+          </a>
         </div>
         <div className="mt-12 flex flex-wrap items-center justify-center gap-4 text-brand-slate">
           <div className="flex items-center gap-2">
@@ -292,6 +300,48 @@ const StatsSection: React.FC = () => (
 );
 
 
+// App Section
+const AppSection: React.FC = () => (
+  <section className="py-20 bg-gray-900/50 relative overflow-hidden">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="animate-fade-in-up order-2 md:order-1">
+          <span className="text-brand-blue font-semibold uppercase tracking-wider">Our Mobile App</span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-brand-light mb-4">Manage Your Business on the Go</h2>
+          <p className="text-brand-slate mb-6">
+            Download the DevSpark Soft IT app to stay connected with our services, manage your projects, and get instant support right from your smartphone. Our app is designed to provide a seamless experience for our clients worldwide.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <a 
+              href={COMPANY_INFO.googlePlayLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-105 transition-transform duration-300"
+            >
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+                alt="Get it on Google Play" 
+                className="h-14"
+                referrerPolicy="no-referrer"
+              />
+            </a>
+          </div>
+        </div>
+        <div className="animate-fade-in-up order-1 md:order-2 flex justify-center">
+          <div className="relative">
+            <div className="absolute inset-0 bg-brand-blue/20 blur-3xl rounded-full"></div>
+            <Image 
+              src="https://i.ibb.co/xKNQVhxB/755-F4689-DD8-A-41-E6-A2-F0-A304849-FBF7-E.png" 
+              alt="DevSpark App Preview" 
+              className="relative z-10 max-w-[280px] md:max-w-xs rounded-[2rem] shadow-2xl border-4 border-gray-800" 
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
 // CTA Section
 const CtaSection: React.FC = () => (
   <section className="py-20 bg-brand-dark">
@@ -342,6 +392,7 @@ const HomePage: React.FC = () => {
       <WhyChooseUsSection />
       <TeamSection />
       <OurProcessSection />
+      <AppSection />
       <StatsSection />
       <CtaSection />
     </>
