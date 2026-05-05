@@ -303,8 +303,8 @@ const StatsSection: React.FC = () => (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
         {STATS.map((stat, index) => (
-            <div className="animate-fade-in-up" style={{ animationDelay: `${index * 0.15}s` }}>
-                <StatItem key={stat.label} stat={stat} />
+            <div key={stat.label} className="animate-fade-in-up" style={{ animationDelay: `${index * 0.15}s` }}>
+                <StatItem stat={stat} />
             </div>
         ))}
       </div>
