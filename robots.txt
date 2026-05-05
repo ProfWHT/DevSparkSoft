@@ -1,0 +1,12 @@
+# Directives for all web crawlers
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+# Specific directives for Yandex
+User-agent: Yandex
+Allow: /
+Disallow: /admin/
+
+# Location of the sitemap
+Sitemap: https://DevSparksoft.com/sitemap.xml
