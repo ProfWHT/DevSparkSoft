@@ -133,12 +133,8 @@ export const WHY_CHOOSE_US_POINTS = [
 export const TEAM_MEMBERS: TeamMember[] = [
   { sortOrder: 1, isActive: true, name: "Walid Hasan Taksid", position: "Owner & CEO", education: "Software Engineer | CSC in NodeJS", address: "Jolsiri Abason, Dhaka, Bangladesh", photo: "https://i.ibb.co/1ttwWTgw/IMG-7243.jpg", badge: "CEO" },
   { sortOrder: 2, isActive: true, name: "Rajibul Islam Sagor", position: "Marketing Director", address: "Morrelganj, Bagerhat", photo: "https://i.ibb.co/xSNwgK9y/IMG-7254.jpg", badge: "Marketing" },
-  { sortOrder: 3, isActive: true, name: "Rakib Hasan Sizan", position: "Manager", address: "Morrelganj, Bagerhat", photo: "https://i.ibb.co/ynXC2vn4/IMG-7255.jpg", badge: "Manager" },
-  { sortOrder: 4, isActive: true, name: "Nauman Chaudhary", position: "Senior IT Consultant & Shareholder", address: "Lahore, Pakistan", photo: "https://i.ibb.co/208sM8VK/IMG-3863.jpg", badge: "Shareholder" },
-  { sortOrder: 5, isActive: true, name: "Ad Khan", position: "Partner", address: "Lahore, Pakistan", photo: "https://i.ibb.co/7dtKvM1s/IMG-7258.jpg", badge: "Partner" },
-  { sortOrder: 6, isActive: true, name: "Taimoor Safdar", position: "Partner & Broker", address: "Lahore, Pakistan", photo: "https://i.ibb.co/NnKkcv8c/IMG-7244.jpg", badge: "Partner" },
-  { sortOrder: 7, isActive: true, name: "Ketty Parry", position: "Investor", address: "Xian, China", photo: "https://i.ibb.co/7dtKvM1s/IMG-7263.jpg", badge: "Investor" },
-  { sortOrder: 8, isActive: true, name: "Ola", position: "Investor", address: "Moscow, Russia", photo: "https://i.ibb.co/NgCKHWRL/IMG-7262.jpg", badge: "Investor" },
+  { sortOrder: 3, isActive: true, name: "Ketty Parry", position: "Investor", address: "Xian, China", photo: "https://i.ibb.co/7dtKvM1s/IMG-7263.jpg", badge: "Investor" },
+  { sortOrder: 4, isActive: true, name: "Ola", position: "Investor", address: "Moscow, Russia", photo: "https://i.ibb.co/NgCKHWRL/IMG-7262.jpg", badge: "Investor" },
 ];
 
 
