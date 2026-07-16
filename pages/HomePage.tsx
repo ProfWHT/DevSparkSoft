@@ -119,13 +119,11 @@ const AboutSection: React.FC = () => (
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="animate-fade-in-up flex justify-center">
           <div className="bg-white p-1 rounded-sm shadow-2xl inline-block border-[10px] border-white ring-1 ring-gray-200 transform -rotate-1 hover:rotate-0 transition-transform duration-500">
-            <div className="aspect-[3.5/4.5] w-[280px] md:w-[320px] overflow-hidden bg-[#3c8dbc] flex items-center justify-center relative">
-              {/* Subtle radial gradient for studio effect */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(0,0,0,0.1)_100%)]"></div>
+            <div className="aspect-[3.5/4.5] w-[280px] md:w-[320px] overflow-hidden relative">
               <Image 
-                src="https://i.ibb.co.com/ntqLzDv/18010-removebg-preview.png" 
+                src="https://i.ibb.co/vCMmgYPG/photo-2026-07-15-12-02-28.jpg" 
                 alt="DevSpark Soft IT Founder" 
-                className="h-full w-auto object-contain relative z-10 scale-[1.05]" 
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
               />
             </div>
           </div>

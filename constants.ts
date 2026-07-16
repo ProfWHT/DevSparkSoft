@@ -131,10 +131,11 @@ export const WHY_CHOOSE_US_POINTS = [
 ];
 
 export const TEAM_MEMBERS: TeamMember[] = [
-  { sortOrder: 1, isActive: true, name: "Walid Hasan Taksid", position: "Owner & CEO", education: "Software Engineer | CSC in NodeJS", address: "Jolsiri Abason, Dhaka, Bangladesh", photo: "https://i.ibb.co/1ttwWTgw/IMG-7243.jpg", badge: "CEO" },
-  { sortOrder: 2, isActive: true, name: "Rajibul Islam Sagor", position: "Marketing Director", address: "Morrelganj, Bagerhat", photo: "https://i.ibb.co/xSNwgK9y/IMG-7254.jpg", badge: "Marketing" },
-  { sortOrder: 3, isActive: true, name: "Ketty Parry", position: "Investor", address: "Xian, China", photo: "https://i.ibb.co/7dtKvM1s/IMG-7263.jpg", badge: "Investor" },
-  { sortOrder: 4, isActive: true, name: "Ola", position: "Investor", address: "Moscow, Russia", photo: "https://i.ibb.co/NgCKHWRL/IMG-7262.jpg", badge: "Investor" },
+  { sortOrder: 1, isActive: true, name: "Walid Hasan Taksid", position: "Owner & CEO", education: "Software Engineer | CSC in NodeJS", address: "Jolsiri Abason, Dhaka, Bangladesh", photo: "https://i.ibb.co/vCMmgYPG/photo-2026-07-15-12-02-28.jpg", badge: "CEO" },
+  { sortOrder: 2, isActive: true, name: "Meherab Hasan", position: "Sales And Marketing Head", address: "Doulatpur, Khulna, Bangladesh", photo: "https://i.ibb.co/SwCGTcNH/photo-2026-07-15-11-37-15.jpg", badge: "Sales & Marketing" },
+  { sortOrder: 3, isActive: true, name: "Rajibul Islam Sagor", position: "Marketing Director", address: "Morrelganj, Bagerhat", photo: "https://i.ibb.co/xSNwgK9y/IMG-7254.jpg", badge: "Marketing" },
+  { sortOrder: 4, isActive: true, name: "Ketty Parry", position: "Investor", address: "Xian, China", photo: "https://i.ibb.co/7dtKvM1s/IMG-7263.jpg", badge: "Investor" },
+  { sortOrder: 5, isActive: true, name: "Ola", position: "Investor", address: "Moscow, Russia", photo: "https://i.ibb.co/NgCKHWRL/IMG-7262.jpg", badge: "Investor" },
 ];
 
 
@@ -212,7 +213,7 @@ const MOCK_CONTENT = {
 
 export const BLOG_AUTHOR: Author = {
   name: "Walid Hasan Taksid",
-  avatar: "https://i.ibb.co/1ttwWTgw/IMG-7243.jpg",
+  avatar: "https://i.ibb.co/vCMmgYPG/photo-2026-07-15-12-02-28.jpg",
   role: "Owner & CEO",
   bio: "Walid Hasan Taksid is the Owner & CEO of DevSpark Soft IT, a Software Engineer specialized in NodeJS and modern web technologies."
 };

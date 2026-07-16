@@ -24,8 +24,8 @@ const AboutCeoPage: React.FC = () => {
               <div className="bg-gray-800/50 p-6 rounded-lg text-center sticky top-24">
                 <div className="mb-6 flex justify-center">
                   <div className="bg-white p-1 rounded-sm shadow-2xl inline-block border-[8px] border-white ring-1 ring-gray-200 transform rotate-1 hover:rotate-0 transition-transform duration-300">
-                    <div className="aspect-[3.5/4.5] w-[180px] overflow-hidden bg-[#3c8dbc] flex items-center justify-center">
-                      <Image src={BLOG_AUTHOR.avatar} alt={BLOG_AUTHOR.name} className="w-full h-full object-contain scale-[1.02]" />
+                    <div className="aspect-[3.5/4.5] w-[180px] overflow-hidden">
+                      <Image src={BLOG_AUTHOR.avatar} alt={BLOG_AUTHOR.name} className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
                     </div>
                   </div>
                 </div>
